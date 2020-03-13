@@ -116,7 +116,8 @@ h1 {
 - - 인라인/id선택자/class선택자/요소  선택자
 - 소스순서
 
-```<!DOCTYPE html>
+```html
+<!DOCTYPE html>
 <html lang="ko">
 <head>
   <meta charset="UTF-8">
@@ -149,4 +150,5 @@ h1 {
   <p id="red" class="blue" style="color: yellow;">7</p>
   <h3 id="red" class="blue" style="color: yellow;">8</h3>
 </body>
-</html>```
+</html>
+```
