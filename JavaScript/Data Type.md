@@ -62,7 +62,7 @@ console.log(nInf);
 
 
 
-#### 2. Strin (문자열)
+#### 2. String (문자열)
 
 2.1 문자열 더하기
 
