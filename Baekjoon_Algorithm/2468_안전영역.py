@@ -20,7 +20,7 @@ def bfs(i,j,num):
 answer = 0
 minimum = min(map(min,land))
 maximum = max(map(max,land))
-for num in range(minimum,maximum):
+for num in range(maximum):
     cnt = 0
     new = [[0]*n for _ in range(n)]
     for i in range(n):
