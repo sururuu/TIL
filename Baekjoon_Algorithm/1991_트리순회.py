@@ -35,8 +35,3 @@ for i in range(n):
     root,left,right = map(str,input().split())
     tree[root] = Node(root,left,right)
 
-pre_order(tree['A'])
-print()
-in_order(tree['A'])
-print()
-post_order(tree['A'])
