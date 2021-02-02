@@ -113,4 +113,67 @@ console.log(myBaby);
 
 ```
 
-/
+
+
+#### #1.6 Array map
+
+> 모든 배열의 아이템에 function을 실행하는 Method
+>
+> 함수의 결과 값으로 새로운 배열 생성
+
+```javascript
+const days = ["Mon", "Tues", "Wed", "Ths", "Fri"];
+// #1
+const smilingDays = days.map((day,index) => `#${index + 1}  ${day}`);
+const addNumber = (day, index) => `#${index + 1} ${day}`;
+// ["#1 Mon", "#2 Tues", "#3 Wed", "#4 Ths", "#5 Fri"]
+
+// #2
+const addSmile = day => `😀 ${day}`;
+const smilingDays = days.map(addSmile);
+const smilingDays = days.map(day => `😀 ${day}`);
+// ["😀 Mon", "😀 Tues", "😀 Wed", "😀 Ths", "😀 Fri"]
+
+```
+
+
+
+#### #1.7 Array filter
+
+> Filter Method는 주어진 Function을 통과한 모든 원소들로 이루어진 배열 생성
+
+```javascript
+const numbers = [2,6,14,26,32,36,54];
+// #1. 
+const bigger = numbers.filter(number => number > 15);
+// #2. 
+const testCondition = number => number > 15;
+const bigger = numbers.filter(testCondition);
+// [26,32,36,54]
+```
+
+
+
+#### #1.8 forEach includes push
+
+> map은 새로운 배열을 return 
+>
+> forEach는 각각의 아이템에 대해 특정한 것을 실행
+
+```javascript
+let greetings = ["hi", "Hello", "Howdy", "Suup"];
+posts.forEach(post => console.log(post));
+
+posts.push("new"); // Array item 추가
+
+if (!greetings.includes("Hello")) {
+    greetings.push("Hello");
+}
+// ["hi", "Hello", "Howdy", "Suup"]
+```
+
+
+
+> JS  array MDN
+
+https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Array
