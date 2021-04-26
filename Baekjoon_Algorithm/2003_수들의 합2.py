@@ -7,15 +7,15 @@ start,end = 0,0
 num = 0
 while True:
     if num >= m:
-        num -= arr[end]
-        end += 1
-    elif start == n:
+        num -= arr[start]
+        start += 1
+    elif end == n:
         break
     else:
-        num += arr[start]
-        start += 1
+        num += arr[end]
+        end += 1
     if num == m:
         cnt += 1
-
-
 print(cnt)
+
+# 투포인터 
