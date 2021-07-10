@@ -7,7 +7,7 @@ for i in range(n):
         if i + j >= n:
             break
         dp[i+j] = min(dp[i+j], dp[i]+1)
-if dp[-1]:
+if dp[-1] != n+1:
     print(dp[-1])
 else:
     print(-1)
