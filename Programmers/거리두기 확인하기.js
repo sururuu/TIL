@@ -2,8 +2,9 @@ function solution(places) {
     var answer = [];
     for (var place of places) {
         var arr = [];
+        place = place.map(v=>v.split(''))
         for (var i=0; i<5; i++) {
-            place[i] = place[i].split('')
+//             place[i] = place[i].split('')
             for (var j=0; j<5; j++) {
                 if (place[i][j] == 'P') {
                     arr.push([i,j])
