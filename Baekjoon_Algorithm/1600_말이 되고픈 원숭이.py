@@ -11,25 +11,25 @@ dy2 = [-1, 1, -2, 2, -2, 2, -1, 1]
 visit = [[[0]*(K+1) for _ in range(w)] for _ in range(h)]
 def bfs(x,y):
     q = deque()
-    q.append([x, y, 0])
-    visit[x][y][0] = 1
+    q.append([x, y, K])
     while q:
         x, y, cnt = q.popleft()
         if [x, y] == [h-1, w-1]:
-            return visit[x][y][cnt] - 1
+            return visit[x][y][cnt]
         for k in range(4):
             nx = x + dx[k]
             ny = y + dy[k]
-            if 0 <= nx < h and 0 <= ny < w and not arr[nx][ny] and not visit[nx][ny][cnt]:
-                q.append([nx, ny, cnt])
+            if 0 <= nx < h and 0 <= ny < w and arr[nx][ny] != 1 and not visit[nx][ny][cnt]:
                 visit[nx][ny][cnt] = visit[x][y][cnt] + 1
-        if cnt < K:
+                q.append([nx, ny, cnt])
+
+        if cnt > 0:
             for k in range(8):
                 nx = x + dx2[k]
                 ny = y + dy2[k]
-                if 0 <= nx < h and 0 <= ny < w and not arr[nx][ny] and not visit[nx][ny][cnt]:
-                    q.append([nx, ny, cnt + 1])
-                    visit[nx][ny][cnt+1] = visit[x][y][cnt] + 1
+                if 0 <= nx < h and 0 <= ny < w and arr[nx][ny] != 1 and not visit[nx][ny][cnt-1]:
+                    visit[nx][ny][cnt-1] = visit[x][y][cnt] + 1
+                    q.append([nx, ny, cnt - 1])
 
     return -1
 print(bfs(0, 0))
