@@ -1,8 +1,4 @@
 import sys
-input = sys.stdin.readline
-n = int(input())
-arr = [list(map(int, input().split())) for _ in range(n)]
-cnt = [0, 0, 0]
 def sol(x,y,n):
     visit = arr[x][y]
     for i in range(x, x+n):
@@ -18,6 +14,10 @@ def sol(x,y,n):
         cnt[1] += 1
     else:
         cnt[2] += 1
+input = sys.stdin.readline
+n = int(input())
+arr = [list(map(int, input().split())) for _ in range(n)]
+cnt = [0, 0, 0]
 sol(0,0,n)
 for i in range(3):
     print(cnt[i])
